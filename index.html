@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131b">
+  <title>Новости Меллстройности</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">М</span><span>НОВОСТИ<br><b>МЕЛЛСТРОЙНОСТИ</b></span></a>
+    <div class="top-live"><span class="dot"></span> ЭФИР</div>
+  </header>
+
+  <main class="layout">
+    <section class="main-column">
+      <div class="section-heading">
+        <div><p class="eyebrow">ИНФОРМАЦИОННЫЙ КАНАЛ</p><h1>Сейчас в эфире</h1></div>
+        <span class="live-label"><i></i> LIVE</span>
+      </div>
+
+      <div class="player-wrap">
+        <video id="player" controls playsinline poster="">
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div id="emptyState" class="empty-state">
+          <div class="play-symbol">▶</div>
+          <strong>Сейчас нет трансляции</strong>
+          <span>Ожидаем начала вещания</span>
+        </div>
+      </div>
+
+      <div class="program-info">
+        <div><h2 id="programTitle">Главный эфир</h2><p id="programDescription">Официальный видеоканал «Новостей Меллстройности»</p></div>
+        <span class="status-pill" id="statusPill">ОЖИДАНИЕ</span>
+      </div>
+
+      <section class="notice">
+        <h3>О канале</h3>
+        <p>Здесь будут показываться прямые трансляции. Пока это стартовая версия интерфейса: локальное видео можно проверить в плеере, но оно ещё не передаётся другим посетителям.</p>
+      </section>
+    </section>
+
+    <aside class="admin-panel">
+      <div class="panel-title"><div class="panel-icon">⚙</div><div><p class="eyebrow">УПРАВЛЕНИЕ</p><h2>Панель вещания</h2></div></div>
+      <label class="field-label" for="titleInput">Название эфира</label>
+      <input id="titleInput" type="text" maxlength="70" value="Главный эфир" placeholder="Например: Срочные новости">
+      <label class="field-label" for="descriptionInput">Описание</label>
+      <textarea id="descriptionInput" rows="3" maxlength="180" placeholder="О чём этот эфир?">Официальный видеоканал «Новостей Меллстройности»</textarea>
+
+      <label class="field-label">Источник видео</label>
+      <label class="file-picker" for="videoFile"><span class="upload-icon">↑</span><span><b>Выбрать видео</b><small>Выбери файл на устройстве для теста</small></span></label>
+      <input class="hidden-input" id="videoFile" type="file" accept="video/*">
+      <p id="fileName" class="file-name">Файл не выбран</p>
+
+      <button id="previewButton" class="button secondary" type="button">Проверить видео</button>
+      <button id="startButton" class="button primary" type="button">● Начать вещание</button>
+      <button id="stopButton" class="button stop" type="button" disabled>■ Завершить эфир</button>
+      <p class="small-note" id="adminMessage" role="status">Выбери видео, чтобы проверить его в плеере.</p>
+      <div class="security-note">Панель демонстрационная. Перед публичным запуском нужно добавить авторизацию администратора и сервер трансляций.</div>
+    </aside>
+  </main>
+
+  <footer>© 2026 Новости Меллстройности · Независимый проект</footer>
+  <script src="app.js"></script>
+</body>
+</html>
